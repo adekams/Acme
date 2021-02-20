@@ -28,11 +28,30 @@ ul {
     color: #fff;
 }
 
+.button-1:focus {
+    outline: none;
+}
+
+.button-1:hover {
+    background: #fff;
+    color: #e8491d;
+    cursor: pointer;
+}
+
 .dark {
     background: #35434a;
     color: #fff;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     padding: 15px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid #e8491d;
+}
+
+textarea {
+    resize: vertical;
 }
 
 /* header */
@@ -80,8 +99,7 @@ header .current a {
     font-weight: bold;
 }
 
-header a:hover,
-button:hover {
+header a:hover {
     color: #ccc;
     font-weight: bold;
 }
@@ -138,7 +156,8 @@ button:hover {
     width: 30%;
 }
 
-#boxes .box i {
+#boxes .box i,
+strong {
     /* width: 90px; */
     color: #e8491d;
 }
@@ -148,12 +167,15 @@ button:hover {
 aside#sidebar {
     float: right;
     width: 30%;
-    margin-top: 10px;
+}
+
+aside#sidebar .form-control {
+    margin-bottom: 15px;
 }
 
 aside#sidebar .quote input,
 aside#sidebar .quote textarea {
-    width: 90%;
+    width: 100%;
     padding: 5px;
     box-sizing: border-box;
 }
@@ -163,11 +185,17 @@ article#main-col {
     width: 60%;
 }
 
+h2.page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 /* Services */
 ul#services li {
     background: #e6e6e6;
     border: 1px solid #ccc;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     list-style: none;
     padding: 20px;
 }
@@ -188,6 +216,10 @@ footer {
 
 /* Media query */
 @media(max-width: 768px) {
+    .dark {
+        margin: 10px auto;
+    }
+
     header #branding,
     header nav,
     header nav li,
@@ -209,16 +241,22 @@ footer {
         margin-top: 40px;
     }
 
+    #showcase h2 {
+        font-size: 50px;
+    }
+
     #newsletter button,
     aside#sidebar .quote button {
         display: block;
         width: 100%;
     }
 
-    #newsletter form input[type='email'],
-    aside#sidebar .quote input,
-    aside#sidebar .quote textarea {
+    #newsletter form input[type='email'] {
         width: 100%;
         margin-bottom: 5px;
+    }
+
+    aside#sidebar {
+        margin-top: 10px;
     }
 }
